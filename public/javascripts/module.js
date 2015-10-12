@@ -13,7 +13,7 @@ app.config(function($urlRouterProvider, $stateProvider){
 
 app.controller('main', ['$scope', '$http', '$state', function($scope, $http, $state){
 
-  $http.get('http://localhost:3000/tasks')
+  $http.get('/tasks')
     .then(function(data){
       $scope.tasks = data.data;
     });
@@ -24,7 +24,7 @@ app.controller('main', ['$scope', '$http', '$state', function($scope, $http, $st
       task: $scope.todo,
       complete: false
     };
-    $http.post('http://localhost:3000/tasks', task)
+    $http.post('/tasks', task)
       .then(function(data){
         $state.go($state.current, {}, {reload: true})
       });
@@ -32,7 +32,7 @@ app.controller('main', ['$scope', '$http', '$state', function($scope, $http, $st
   };
 
   $scope.status = function(task){
-    $http.put('http://localhost:3000/tasks/' + task._id)
+    $http.put('/tasks/' + task._id)
       .then(function(data){
         $state.go($state.current, {}, {reload: true})
       })
