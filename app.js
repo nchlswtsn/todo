@@ -11,7 +11,7 @@ var users = require('./routes/users');
 var mongoose = require('mongoose');
 // require('./models/Task');
 
-mongoose.connect(process.env.MONGO_URL);
+mongoose.connect(process.env.MONGOLAB_URI || process.env.MONGO_URL);
 
 var app = express();
 
