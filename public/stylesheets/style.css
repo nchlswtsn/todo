@@ -1,9 +1,13 @@
 body {
+  background-color: black;
   padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
   text-align: center;
+  color: white
 }
-
+input {
+  color: black;
+}
 a {
   color: #00B7FF;
 }
@@ -16,4 +20,7 @@ a {
 hr {
   margin-top: 0px;
   margin-bottom: 0px;
+}
+.panelRow {
+  background-color: black;
 }
